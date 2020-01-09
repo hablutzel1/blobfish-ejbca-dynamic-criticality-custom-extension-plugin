@@ -17,7 +17,7 @@ public class DynamicCriticalityCertificateExtension extends BasicCertificateExte
 
     private static final Logger log = Logger.getLogger(DynamicCriticalityCertificateExtension.class);
 
-    // TODO check: for serialization purposes, shouldn't we include an static variable like org.cesecore.certificates.certificate.certextensions.standard.SubjectKeyIdentifier.serialVersionUID?. Not sure but it seems that if there exists a saved instance of this extension in EJBCA and any serializable field changes in this class, EJBCA fails during the next load. Refresh appropriately on serialization to work on this.
+    // TODO check: for serialization purposes, shouldn't we include an static variable like org.cesecore.certificates.certificate.certextensions.standard.SubjectKeyIdentifier.serialVersionUID?. It has been observed that if there exists a saved instance of this extension in EJBCA and any serializable field changes in this class, EJBCA fails during the next load with something like: "Failed to load Global Configuration as byte[].: java.io.InvalidClassException: pe.blobfish.ejbca.certextensions.BaseSha256KeyIdentifier; local class incompatible: stream classdesc serialVersionUID = -8065278910060203357, local class serialVersionUID = -2792995405937508397". Refresh appropriately on serialization to work on this.
 
     // FIXME duplicated initialization code in pe.blobfish.ejbca.certextensions.DynamicCriticalityCertificateExtension.readObject.
     private transient ThreadLocal<EndEntityInformation> userData = new ThreadLocal<>();
