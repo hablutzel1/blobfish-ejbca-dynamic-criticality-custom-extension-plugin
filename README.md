@@ -2,7 +2,7 @@
 
 It allows to customize extension criticality through EJBCA WS API.
 
-## Installation and usage
+## Installation
 
 **First check the latest EJBCA version that this extension was tested with in the comments at `build.xml`.**
 
@@ -34,8 +34,9 @@ Then redeploy EJBCA:
 $ cd /opt/ejbca
 $ sudo -E ant build deployear
 ```
+## Usage
 
-Now, the custom extensions can be configured from the Admin GUI, section “System Configuration > Custom Certificate Extensions”:
+The custom extension can be configured from the Admin GUI, section “System Configuration > Custom Certificate Extensions”. Some examples follow:
 
 * KU
   * Object Identifier (OID): 2.5.29.15
